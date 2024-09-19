@@ -1,0 +1,279 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+/* Estilo del header */
+header {
+    background-color: #333;
+    color: white;
+    padding: 0; /* Remover padding para que la imagen ocupe todo el ancho */
+    text-align: center;
+    position: relative; /* Para posicionar elementos dentro del header */
+    overflow: hidden; /* Para ocultar cualquier desbordamiento de la imagen */
+}
+
+header img {
+    width: 100%;
+    height: auto;
+    display: block; /* Asegura que la imagen no tenga espacio debajo */
+}
+
+header nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px; /* Añadir padding para los botones */
+    box-sizing: border-box;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+}
+
+header nav ul li {
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header nav a img {
+    width: 150px;
+}
+
+/* Estilo de los botones en el header */
+header .btn-container {
+    display: flex;
+    align-items: center;
+}
+
+header .btn-container a {
+    background-color: #ff4500;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 10px;
+    transition: background-color 0.3s ease;
+}
+
+header .btn-container a:hover {
+    background-color: #e03e00;
+}
+
+
+/* Hero section */
+#hero {
+    text-align: center;
+    background-color: #444;
+    color: white;
+    padding: 50px;
+}
+
+#hero img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+#hero h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+#hero h1 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+#hero button {
+    padding: 10px 20px;
+    background-color: #ff4500;
+    color: white;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#hero button:hover {
+    background-color: #e03e00;
+}
+
+/* Secciones principales */
+main {
+    padding: 40px;
+    background-color: #fff;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+p {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* Fila para artículos */
+.fila {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+article {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, border 0.3s ease;
+}
+
+article::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: #ff4500;
+    z-index: -1;
+    transition: left 0.3s ease;
+}
+
+article:hover::before {
+    left: 0;
+}
+
+article:hover {
+    transform: translateY(-10px);
+    border: 2px solid #ff4500;
+}
+
+article img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+article h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+article p {
+    margin-bottom: 5px;
+}
+
+/* Sección de contacto */
+#contacto {
+    padding: 40px;
+    background-color: #f8f8f8;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 40px auto;
+    max-width: 600px; /* Limitar el ancho máximo del contenedor */
+}
+
+#contacto h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+#contacto form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#contacto form .fila {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 20px; /* Espaciado entre los campos */
+    margin-bottom: 20px;
+}
+
+#contacto form input, #contacto form select, #contacto form textarea {
+    padding: 15px;
+    width: 100%;
+    max-width: 500px; /* Limitar el ancho máximo para los campos */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#contacto form input:focus, #contacto form select:focus, #contacto form textarea:focus {
+    border-color: #ff4500;
+    box-shadow: 0px 2px 6px rgba(255, 69, 0, 0.3);
+    outline: none;
+}
+
+#contacto form textarea {
+    resize: vertical;
+    height: 150px; /* Ajustar la altura del área de texto */
+}
+
+#contacto form button {
+    padding: 15px 30px;
+    background-color: #ff4500;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 20px;
+}
+
+#contacto form button:hover {
+    background-color: #e03e00;
+    transform: translateY(-2px);
+}
+
+
+/* Pie de página */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+footer p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
